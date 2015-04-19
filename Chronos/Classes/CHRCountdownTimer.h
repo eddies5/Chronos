@@ -2,8 +2,7 @@
 //  CHRCountdownTimer.h
 //  Chronos
 //
-//  Created by Eduardo Saenz on 4/18/15.
-//  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
+//  Copyright (c) 2015 Eduardo Saenz. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -24,6 +23,7 @@
 //  IN THE SOFTWARE.
 //
 
+#pragma mark - Imports
 
 @import Foundation;
 #import "CHRTimer.h"
@@ -41,11 +41,11 @@
  The block to execute when the timer reaches zero.
  
  @param     timer
- The timer that fired.
+            The timer that fired.
  @param     invocation
- The current invocation number. The first invocation is 0.
+            The current invocation number. The first invocation is 0.
  */
-typedef void (^CHRCountdownTimerExecutionBlock)(__weak CHRCountdownTimer *timer, NSUInteger invocation);
+typedef void (^CHRCountdownTimerExecutionBlock)(__weak CHRCountdownTimer *timer);
 
 
 #pragma mark - CHRDispatchTimer Interface
@@ -75,94 +75,94 @@ typedef void (^CHRCountdownTimerExecutionBlock)(__weak CHRCountdownTimer *timer,
  
  The execution block will be executed on the default execution queue.
  
- @param     startTime
- The inital timer time, in seconds.
+ @param     time
+            The inital timer time, in seconds.
  @param     executionBlock
- The block to execute when time reaches zero.
+            The block to execute when time reaches zero.
  @return    The newly initialized CHRCountdownTimer object.
  */
-- (instancetype)initWithStartTime:(NSTimeInterval)startTime
-                  executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock;
+- (instancetype)initWithRemainingTime:(NSTimeInterval)time
+                       executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock;
 
 /**
  Initializes a CHRCountdownTimer object.
  
- @param     startTime
- The inital timer time, in seconds.
+ @param     time
+            The inital timer time, in seconds.
  @param     executionBlock
- The block to execute when time reaches zero.
+            The block to execute when time reaches zero.
  @param     executionQueue
- The queue that should execute the executionBlock.
+            The queue that should execute the executionBlock.
  @return    The newly initialized CHRCountdownTimer object.
  */
-- (instancetype)initWithStartTime:(NSTimeInterval)startTime
-                  executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock
-                  executionQueue:(dispatch_queue_t)executionQueue;
+- (instancetype)initWithRemainingTime:(NSTimeInterval)time
+                       executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock
+                       executionQueue:(dispatch_queue_t)executionQueue;
 
 /**
  Initializes a CHRCountdownTimer object.
  
- @param     startTime
- The inital timer time, in seconds.
+ @param     time
+            The inital timer time, in seconds.
  @param     executionBlock
- The block to execute when time reaches zero.
+            The block to execute when time reaches zero.
  @param     executionQueue
- The queue that should execute the executionBlock.
+            The queue that should execute the executionBlock.
  @param     failureBlock
- The block to execute if the timer fails to initialize.
+            The block to execute if the timer fails to initialize.
  @return    The newly initialized CHRCountdownTimer object.
  */
-- (instancetype)initWithStartTime:(NSTimeInterval)startTime
-                   executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock
-                   executionQueue:(dispatch_queue_t)executionQueue
-                     failureBlock:(CHRTimerInitFailureBlock)failureBlock
-                        NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithRemainingTime:(NSTimeInterval)time
+                       executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock
+                       executionQueue:(dispatch_queue_t)executionQueue
+                         failureBlock:(CHRTimerInitFailureBlock)failureBlock
+                            NS_DESIGNATED_INITIALIZER;
 
 /**
  Creates a CHRCountdownTimer object.
  
  The execution block will be executed on the default execution queue.
  
- @param     startTime
- The inital timer time, in seconds.
+ @param     time
+            The inital timer time, in seconds.
  @param     executinoBlock
- The block to execute when time reaches zero.
+            The block to execute when time reaches zero.
  */
-+ (CHRCountdownTimer *)countdownTimerWithStartTime:(NSTimeInterval)startTime
-                                    executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock;
++ (CHRCountdownTimer *)countdownTimerWithRemainingTime:(NSTimeInterval)time
+                                        executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock;
 
 /**
  Creates a CHRCountdownTimer object.
  
  @param     startTime
- The inital timer time, in seconds.
+            The inital timer time, in seconds.
  @param     executionBlock
- The block to execute when time reaches zero.
+            The block to execute when time reaches zero.
  @param     executionQueue
- The queue that should execute the executionBlock.
+            The queue that should execute the executionBlock.
  @return    The newly initialized CHRCountdownTimer object.
  */
-+ (CHRCountdownTimer *)countdownTimerWithStartTime:(NSTimeInterval)startTime
-                                    executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock
-                                    executionQueue:(dispatch_queue_t)executionQueue;
++ (CHRCountdownTimer *)countdownTimerWithRemainingTime:(NSTimeInterval)time
+                                        executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock
+                                        executionQueue:(dispatch_queue_t)executionQueue;
 
 /**
  Creates a CHRCountdownTimer object.
  
  @param     startTime
- The inital timer time, in seconds.
+            The inital timer time, in seconds.
  @param     executionBlock
- The block to execute when time reaches zero.
+            The block to execute when time reaches zero.
  @param     executionQueue
- The queue that should execute the executionBlock.
+            The queue that should execute the executionBlock.
  @param     failureBlock
- The block to execute if the timer fails to initialize.
+            The block to execute if the timer fails to initialize.
  @return    The newly initialized CHRCountdownTimer object.
  */
-+ (CHRCountdownTimer *)countdownTimerWithStartTime:(NSTimeInterval)startTime
-                                    executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock
-                                    executionQueue:(dispatch_queue_t)executionQueue
-                                      failureBlock:(CHRTimerInitFailureBlock)failureBlock;
++ (CHRCountdownTimer *)countdownTimerWithRemainingTime:(NSTimeInterval)time
+                                        executionBlock:(CHRCountdownTimerExecutionBlock)executionBlock
+                                        executionQueue:(dispatch_queue_t)executionQueue
+                                          failureBlock:(CHRTimerInitFailureBlock)failureBlock;
 
 // -----
 // @name Using a countdown timer.
@@ -174,7 +174,7 @@ typedef void (^CHRCountdownTimerExecutionBlock)(__weak CHRCountdownTimer *timer,
  Adds time to the CHRCountdownTimer object.
  
  @param     time
- The time to add, in seconds.
+            The time to add, in seconds.
  */
 - (void)addTime:(NSTimeInterval)time;
 
@@ -183,7 +183,7 @@ typedef void (^CHRCountdownTimerExecutionBlock)(__weak CHRCountdownTimer *timer,
  the timer's time to go negative, the execution block will fire immediately.
  
  @param     time
- The time to subtract, in seconds.
+            The time to subtract, in seconds.
  */
 - (void)subtractTime:(NSTimeInterval)time;
 
@@ -191,5 +191,16 @@ typedef void (^CHRCountdownTimerExecutionBlock)(__weak CHRCountdownTimer *timer,
  Ends the CHRCountdownTimer object and fires the execution block.
  */
 - (void)end;
+
+// -----
+// @name Properties
+// -----
+
+#pragma mark Properties
+
+/**
+ The receiver's remaining time.
+ */
+@property (readonly) NSTimeInterval remainingTime;
 
 @end
