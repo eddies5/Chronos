@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C9CBDE41AE2F6BA00FFB48F /* CHRCountdownTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C9CBDE21AE2F6BA00FFB48F /* CHRCountdownTimer.h */; };
+		2C9CBDE51AE2F6BA00FFB48F /* CHRCountdownTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C9CBDE21AE2F6BA00FFB48F /* CHRCountdownTimer.h */; };
+		2C9CBDE61AE2F6BA00FFB48F /* CHRCountdownTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CBDE31AE2F6BA00FFB48F /* CHRCountdownTimer.m */; };
+		2C9CBDE71AE2F6BA00FFB48F /* CHRCountdownTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CBDE31AE2F6BA00FFB48F /* CHRCountdownTimer.m */; };
 		DD53236E1AC8DECA00AF0868 /* Chronos.h in Headers */ = {isa = PBXBuildFile; fileRef = DD53236D1AC8DECA00AF0868 /* Chronos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD8A030B1ACFCC9E003C1CDF /* CHRDispatchTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8A030A1ACFCC9E003C1CDF /* CHRDispatchTimerTests.m */; };
 		DD8A030E1ACFCFD6003C1CDF /* CHRDispatchTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = DD8A030C1ACFCFD6003C1CDF /* CHRDispatchTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,6 +76,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C9CBDE21AE2F6BA00FFB48F /* CHRCountdownTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHRCountdownTimer.h; path = Classes/CHRCountdownTimer.h; sourceTree = "<group>"; };
+		2C9CBDE31AE2F6BA00FFB48F /* CHRCountdownTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHRCountdownTimer.m; path = Classes/CHRCountdownTimer.m; sourceTree = "<group>"; };
 		DD5323681AC8DECA00AF0868 /* Chronos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chronos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD53236C1AC8DECA00AF0868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD53236D1AC8DECA00AF0868 /* Chronos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chronos.h; sourceTree = "<group>"; };
@@ -189,6 +195,8 @@
 				DD8A030D1ACFCFD6003C1CDF /* CHRDispatchTimer.m */,
 				DDB8D1EF1AD9F3D10056B178 /* CHRVariableTimer.h */,
 				DDB8D1F01AD9F3D10056B178 /* CHRVariableTimer.m */,
+				2C9CBDE21AE2F6BA00FFB48F /* CHRCountdownTimer.h */,
+				2C9CBDE31AE2F6BA00FFB48F /* CHRCountdownTimer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -219,6 +227,7 @@
 			files = (
 				DD8A030E1ACFCFD6003C1CDF /* CHRDispatchTimer.h in Headers */,
 				DD53236E1AC8DECA00AF0868 /* Chronos.h in Headers */,
+				2C9CBDE41AE2F6BA00FFB48F /* CHRCountdownTimer.h in Headers */,
 				DDB8D1EA1AD9027D0056B178 /* CHRTimer.h in Headers */,
 				DDB8D1F11AD9F3D10056B178 /* CHRVariableTimer.h in Headers */,
 				DDB8D1EE1AD9F36C0056B178 /* CHRRepeatingTimer.h in Headers */,
@@ -232,6 +241,7 @@
 			files = (
 				DD9ED4C71AD118690068D45E /* Chronos.h in Headers */,
 				DD9ED4C81AD118690068D45E /* CHRDispatchTimer.h in Headers */,
+				2C9CBDE51AE2F6BA00FFB48F /* CHRCountdownTimer.h in Headers */,
 				DDB8D1EB1AD902850056B178 /* CHRTimer.h in Headers */,
 				DDB8D1F21AD9F3D10056B178 /* CHRVariableTimer.h in Headers */,
 				DDB8D1ED1AD9F3650056B178 /* CHRRepeatingTimer.h in Headers */,
@@ -397,6 +407,7 @@
 			files = (
 				DD8A030F1ACFCFD6003C1CDF /* CHRDispatchTimer.m in Sources */,
 				DDB8D1F31AD9F3D10056B178 /* CHRVariableTimer.m in Sources */,
+				2C9CBDE61AE2F6BA00FFB48F /* CHRCountdownTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +426,7 @@
 			files = (
 				DD9ED4C61AD1185E0068D45E /* CHRDispatchTimer.m in Sources */,
 				DDB8D1F41AD9F3D10056B178 /* CHRVariableTimer.m in Sources */,
+				2C9CBDE71AE2F6BA00FFB48F /* CHRCountdownTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
