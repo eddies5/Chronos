@@ -56,11 +56,8 @@ typedef void (^CHRTimerInitFailureBlock)(void);
 
 /**
  Starts the timer.
- 
- @param     now
-            YES if the timer should start immediately.
  */
-- (void)start:(BOOL)now;
+- (void)start;
 
 /**
  Stops the timer and does not reset the invocation count.
@@ -74,6 +71,15 @@ typedef void (^CHRTimerInitFailureBlock)(void);
  an error, and will result in an exception being thrown.
  */
 - (void)cancel;
+
+/**
+ Starts the timer.
+ 
+ @param     now
+ YES if the timer should start immediately.
+ */
+@optional
+- (void)start:(BOOL)now;
 
 // -----
 // @name Properties

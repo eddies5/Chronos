@@ -203,4 +203,9 @@ typedef void (^CHRCountdownTimerExecutionBlock)(__weak CHRCountdownTimer *timer)
  */
 @property (readonly) NSTimeInterval remainingTime;
 
+/**
+ The receiver's execution block.
+ */
+@property (readonly, copy) CHRCountdownTimerExecutionBlock executionBlock;
+
 @end

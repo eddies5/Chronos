@@ -150,6 +150,11 @@ static NSString * const CHRVariableTimerExecutionQueueNamePrefix = @"com.chronus
 
 #pragma mark Using a Timer
 
+- (void)start
+{
+    [self start:YES];
+}
+
 - (void)start:(BOOL)now
 {
     [self validate];

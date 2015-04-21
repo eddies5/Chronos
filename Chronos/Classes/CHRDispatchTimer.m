@@ -140,6 +140,11 @@ static NSString * const CHRDispatchTimerExecutionQueueNamePrefix = @"com.chronus
 
 #pragma mark Using a Dispatch Timer
 
+- (void)start
+{
+    [self start:YES];
+}
+
 - (void)start:(BOOL)now 
 {
     [self validate];
